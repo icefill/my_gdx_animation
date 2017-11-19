@@ -1,0 +1,54 @@
+
+weapons.png
+format: RGBA8888
+filter: MipMapNearestNearest,MipMapNearestNearest
+repeat: none
+spear1
+  rotate: false
+  xy: 1, 1
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+helm1
+  rotate: false
+  xy: 51, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+helm2
+  rotate: false
+  xy: 85, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+shield1
+  rotate: false
+  xy: 119, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+shield2
+  rotate: false
+  xy: 153, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+sword1
+  rotate: false
+  xy: 187, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+sword2
+  rotate: false
+  xy: 221, 17
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1

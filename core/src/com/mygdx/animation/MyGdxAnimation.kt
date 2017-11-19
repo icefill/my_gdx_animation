@@ -1,5 +1,4 @@
-package com.mygdx.anim_test
-
+package com.mygdx.animation
 import com.badlogic.gdx.ApplicationAdapter
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
@@ -16,10 +15,10 @@ import com.mygdx.anim_test.animation.Dir
 import com.mygdx.anim_test.animation.ViewUnit
 import com.badlogic.gdx.utils.Json
 import com.badlogic.gdx.utils.SerializationException
-import com.mygdx.anim_test.animation.gdxIntArray
+import com.mygdx.anim_test.animation.gdxArray
 
 
-class MyGdxGame : ApplicationAdapter() {
+class MyGdxAnimation : ApplicationAdapter() {
     lateinit internal var batch: SpriteBatch
     lateinit internal var anim: Anim
     internal var time: Float=0f
@@ -70,7 +69,14 @@ class MyGdxGame : ApplicationAdapter() {
             ,ViewUnit(32f,16f,16f,atlas2.findRegion("helm1"))
             ,ViewUnit(32f,16f,16f,atlas2.findRegion("helm2"))
         )
+
         viewUnits= arrayOfNulls<ViewUnit?>(15)
+        viewUnits[0]=wholeViewUnits[0]
+        viewUnits[1]=wholeViewUnits[1]
+        viewUnits[2]=wholeViewUnits[2]
+        viewUnits[3]=wholeViewUnits[3]
+        viewUnits[4]=wholeViewUnits[4]
+
 
         group= FrameGroup(anim,viewUnits,true)
         viewUnitTables = Table(skin)
@@ -156,8 +162,9 @@ class MyGdxGame : ApplicationAdapter() {
 
         viewUnitWindow= Window("ViewUnits",skin)
         val viewUnitScrollPane = ScrollPane(viewUnitTables,skin)
-        viewUnitWindow.add(viewUnitScrollPane)
-        rightUpTable.add(viewUnitWindow).grow().pad(5f).row()
+        viewUnitScrollPane.setFadeScrollBars(false)
+        viewUnitWindow.add(viewUnitScrollPane).height(90f)
+        rightUpTable.add(viewUnitWindow).height(95f).grow().pad(5f).row()
         rightUpTable.add(framesWindow).grow().pad(5f).colspan(2).row()
         downTable.add(anchorsWindow).height(161f).pad(5f).colspan(2).grow().row()
 
@@ -217,8 +224,7 @@ class MyGdxGame : ApplicationAdapter() {
         batch.dispose()
     }
 
-    class ViewUnitTable(index: Int, viewUnit: ViewUnit?, skin:Skin): Button(skin){
-        internal var index=index
+    class ViewUnitTable(internal var index: Int, viewUnit: ViewUnit?, skin:Skin): Button(skin){
         internal var viewUnit: ViewUnit?= viewUnit
                     set(viewUnit) {
                         field=viewUnit
@@ -240,9 +246,7 @@ class MyGdxGame : ApplicationAdapter() {
         }
     }
 
-    class ObjActor(anim:Anim, viewUnits: Array<ViewUnit?>, val fixedFrame:Boolean=false) : Actor(){
-        var anim= anim
-        var viewUnits=viewUnits
+    class ObjActor(var anim: Anim, var viewUnits: Array<ViewUnit?>, val fixedFrame:Boolean=false) : Actor(){
         var time=0f
         var frameIndex=0
         override fun act(delta:Float){
@@ -273,7 +277,7 @@ class MyGdxGame : ApplicationAdapter() {
         val root_x=0f
         val root_y=-10f
         var frameIndex=0
-                set(frameIndex: Int){
+                set(frameIndex){
                     field=frameIndex
                     if (forEditing) objActor.frameIndex=frameIndex
                 }
@@ -319,12 +323,9 @@ class MyGdxGame : ApplicationAdapter() {
         }
         fun updateMoversBounds() {
             if (anim.frameSize>0) {
-                var i = 0
-                for (anchorIndex in anim.anchorOrder) {
-                    val anchorCoord = anim.anchors[anchorIndex].anchorCoords[frameIndex]
-                    partActors[i].setBounds(anchorCoord.x - 2 + root_x, anchorCoord.y - 2 + root_y, 4f, 4f)
-                    i++
-                }
+                anim.anchorOrder
+                        .map { anim.anchors[it].anchorCoords[frameIndex] }
+                        .forEachIndexed { i, anchorCoord -> partActors[i].setBounds(anchorCoord.x - 2 + root_x, anchorCoord.y - 2 + root_y, 4f, 4f) }
             }
         }
         override fun act(delta:Float) {
@@ -335,10 +336,10 @@ class MyGdxGame : ApplicationAdapter() {
     }
 
 
-    class FramesWindow(anim:Anim, skin:Skin, viewUnits: Array<ViewUnit?>): Window("Frames",skin){
+    class FramesWindow(anim:Anim, skin:Skin, var viewUnits: Array<ViewUnit?>): Window("Frames",skin){
 
         var anim:Anim=anim
-            set(anim:Anim){
+            set(anim){
                 field=anim
                 currentFrameIndex=0
                 //previewTable.anim=anim
@@ -354,16 +355,13 @@ class MyGdxGame : ApplicationAdapter() {
                 }
             }
         var currentFrameIndexChanged=false
-            get() {
-                return if (!field) false
-                else { // when true
-                    field=false
-                    true
-                }
+            get() = if (!field) false
+            else { // when true
+                field=false
+                true
             }
         var framesTable=Table()
         var frameTableList= ArrayList<FrameTable>()
-        var viewUnits=viewUnits
         //var previewTable :PreviewTable
         lateinit var previewGroup:FrameGroup
 
@@ -703,7 +701,7 @@ class MyGdxGame : ApplicationAdapter() {
                             textField.text = "ERR"
                             null
                         }?.let {
-                            val indicesToChange = gdxIntArray(it)
+                            val indicesToChange = gdxArray<Int>(it)
                             if (indicesToChange.any {!(0<= it && it <viewUnits.size)}) {
                                 textField.text="OOR"
 

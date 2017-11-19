@@ -7,9 +7,6 @@ import java.util.*
  * Created by Byungpil on 2017-06-15.
  */
 
-//Add frame
-//Add Anchor
-// insert coord,rot,index..
 
 typealias gdxArray<T> = com.badlogic.gdx.utils.Array<T>
 
@@ -24,8 +21,16 @@ class Anim (){
     private var animationDuration :Float =0f
     private var frameDuration :Float =0f
     internal var scaleX=1f
+            set(scaleX) {
+                field=scaleX
+                scaleDisabled = field == 1f
+            }
     internal var scaleY=1f
-
+            set(scaleY) {
+                field=scaleY
+                scaleDisabled = field == 1f
+            }
+    internal var scaleDisabled=true
     init {
         frameDuration=1/8.0f
 
@@ -66,7 +71,13 @@ class Anim (){
                 val anchor = anchors[anchorIndex]
                 for (viewUnitIndex in anchor.indices) {
                     val anchorCoord = anchor.anchorCoords[frameIndex]
-                    viewUnits.getOrNull(viewUnitIndex)?.draw(anchorCoord.dir, batch, anchorCoord.x + x, anchorCoord.y + y, anchorCoord.rot)
+                    if (scaleDisabled) {
+                        viewUnits.getOrNull(viewUnitIndex)?.draw(anchorCoord.dir, batch, anchorCoord.x + x, anchorCoord.y + y, anchorCoord.rot)
+                    }
+                    else {
+                        viewUnits.getOrNull(viewUnitIndex)?.draw(anchorCoord.dir, batch, anchorCoord.x*scaleX + x, anchorCoord.y*scaleY + y, anchorCoord.rot)
+                    }
+
                 }
 
             }
