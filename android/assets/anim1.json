@@ -1,0 +1,214 @@
+{
+anchors: [
+	{
+		anchorN: 0
+		indices: [ 3 ]
+		anchorCoords: [
+			{
+				x: -4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 1
+		indices: [ 3 ]
+		anchorCoords: [
+			{
+				x: 4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 4
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 2
+		indices: [ 2 ]
+		anchorCoords: [
+			{
+				x: -6
+				y: 7
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: 7
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: 7
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: 7
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 3
+		indices: [ 1 ]
+		anchorCoords: [
+			{
+				x: 0
+				y: 9
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 9
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 9
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 9
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 4
+		indices: [ 2 ]
+		anchorCoords: [
+			{
+				x: 6
+				y: 3
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 3
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 3
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 3
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 5
+		indices: [ 0 ]
+		anchorCoords: [
+			{
+				x: 0
+				y: 15
+				rot: 0
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 15
+				rot: 0
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 17
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 17
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+]
+anchorOrder: [ 0, 1, 2, 3, 4, 5 ]
+frameSize: 4
+animationDuration: 0.26666668
+frameDuration: 0.06666667
+scaleX: 1
+scaleY: 1
+}

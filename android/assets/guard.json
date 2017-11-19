@@ -1,0 +1,298 @@
+{
+anchors: [
+	{
+		anchorN: 0
+		indices: [ 3 ]
+		anchorCoords: [
+			{
+				x: -2
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -1
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 1
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 3
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 3
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 3
+				y: 1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 1
+		indices: [ 3 ]
+		anchorCoords: [
+			{
+				x: -9
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -8
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -6
+				y: -1
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 2
+		indices: [ 2, 4, 2 ]
+		anchorCoords: [
+			{
+				x: 3
+				y: 10
+				rot: 10
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 4
+				y: 8
+				rot: 10
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 5
+				y: 7
+				rot: 10
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 6
+				rot: 10
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 6
+				rot: 15
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: 6
+				y: 6
+				rot: 15
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 3
+		indices: [ 1 ]
+		anchorCoords: [
+			{
+				x: -4
+				y: 8
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+			{
+				x: -3
+				y: 8
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+			{
+				x: -2
+				y: 8
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+			{
+				x: -1
+				y: 7
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+			{
+				x: -1
+				y: 7
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+			{
+				x: 0
+				y: 7
+				rot: 0
+				dir: UL
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 4
+		indices: [ 2, 7 ]
+		anchorCoords: [
+			{
+				x: -14
+				y: 5
+				rot: 0
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: -12
+				y: 6
+				rot: 0
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: -10
+				y: 6
+				rot: -5
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: -9
+				y: 5
+				rot: -8
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: -9
+				y: 5
+				rot: -8
+				dir: DR
+				isVisible: []
+			}
+			{
+				x: -9
+				y: 5
+				rot: -12
+				dir: DR
+				isVisible: []
+			}
+		]
+	}
+	{
+		anchorN: 5
+		indices: [ 0 ]
+		anchorCoords: [
+			{
+				x: -5
+				y: 13
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -4
+				y: 13
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -3
+				y: 13
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -2
+				y: 12
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -2
+				y: 12
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+			{
+				x: -1
+				y: 12
+				rot: 0
+				dir: DL
+				isVisible: []
+			}
+		]
+	}
+]
+anchorOrder: [ 0, 1, 2, 3, 5, 4 ]
+frameSize: 6
+animationDuration: 0.40000004
+frameDuration: 0.06666667
+scaleX: 1
+scaleY: 1
+}
